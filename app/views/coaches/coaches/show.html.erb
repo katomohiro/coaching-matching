@@ -1,0 +1,31 @@
+<div class="container">
+  <main class="row pt-3 pb-5" role="main">
+    <div class="col-3">
+      <%= image_tag @coach.thumbnail.url, class: "w-100" if @coach.thumbnail? %>
+    </div>
+    <div class="col-9">
+      <table>
+        <tr>
+          <td class="w-25">名前</td>
+          <td><%= @coach.name %></td>
+        </tr>
+
+        <tr>
+          <td class="w-25">ニックネーム</td>
+          <td><%= @coach.nickname %></td>
+        </tr>
+
+        <tr>
+          <td class="w-25">紹介文</td>
+          <td><%= @coach.description %></td>
+        </tr>
+
+        <tr>
+          <td class="w-25">連絡方法</td>
+          <td><%= @coach.contact %></td>
+        </tr>
+
+      </table>
+    </div>
+  </main>
+</div>

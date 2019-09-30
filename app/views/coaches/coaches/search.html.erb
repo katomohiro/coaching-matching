@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <!-- Content here -->
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 border-right border-sm-bottom pt-3 pb-3">
+      <%= form_for @coach, url: '/coaches/search', method: :get, :html => {:class => ""} do |f| %>
+        <div class="mb-4">
+          <div class="form-group">
+            <%= f.label :name, '名前' %>
+            <%= f.text_field :name, value: @coach.name, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :nickname, 'ニックネーム' %>
+            <%= f.text_field :nickname, value: @coach.nickname, class: "form-control" %>
+          </div>
+        </div>
+        <%= f.submit "検索" , class: "btn btn-primary"%>
+      <% end %>
+    </div>
+    <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 pt-3" role="main">
+      <h1>コーチ一覧</h1>
+      <div class="card-deck">
+      <% @coaches.each do |coach| %>
+        <div class="card">
+          <div class="card-header">
+            <div class="d-inline-block mr-3 align-middle" style="width:75px;height:75px;">
+              <%= image_tag coach.thumbnail.thumb.url, class: "w-100 h-100 rounded-circle" if coach.thumbnail? %>
+            </div>
+            <div class="d-inline-block align-middle">
+              <h5 class="card-title"><%= coach.name %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= coach.nickname %></h6>
+            </div>
+          </div>
+          <div class="card-body">
+            <small class="d-block" style="height: 200px;overflow: hidden;"><%= coach.description %></small>
+            <%= link_to '詳細', coaches_path(coach.id), {class:"btn btn-outline-primary", role:"button"} %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+current directory: /Users/tomohirokato/RailsWorkspaces/coaching_matching/vendor/bundler/gems/childprocess-2.0.0/ext
+/Users/tomohirokato/.rbenv/versions/2.6.4/bin/ruby mkrf_conf.rb
+
+current directory: /Users/tomohirokato/RailsWorkspaces/coaching_matching/vendor/bundler/gems/childprocess-2.0.0/ext
+/Users/tomohirokato/.rbenv/versions/2.6.4/bin/ruby -rrubygems /Users/tomohirokato/RailsWorkspaces/coaching_matching/vendor/bundler/gems/rake-12.3.3/exe/rake RUBYARCHDIR\=/Users/tomohirokato/RailsWorkspaces/coaching_matching/vendor/bundler/extensions/x86_64-darwin-18/2.6.0-static/childprocess-2.0.0 RUBYLIBDIR\=/Users/tomohirokato/RailsWorkspaces/coaching_matching/vendor/bundler/extensions/x86_64-darwin-18/2.6.0-static/childprocess-2.0.0
