@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: coaching_matching_production
-  username: coaching_matching
-  password: <%= ENV['COACHING_MATCHING_DATABASE_PASSWORD'] %>
+  database: heroku_83c11383dc17f29
+  username: bb5a3395b7bafd
+  password: <%= ENV['DATABASE_PASSWORD'] %>
