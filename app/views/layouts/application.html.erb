@@ -12,27 +12,26 @@
   </head>
 
   <body>
-  <header class="navbar navbar-expand-lg navbar-light text-right bg-primary">
-
-    <%= link_to "はぐくむコーチ MATCH", root_path, class: "text-white" %>
-
-    <% if coach_signed_in? %>
-      <ul class="navbar-nav flex-row ml-md-auto d-md-flex collapse" id="navbarToggleExternalContent">
+  <header class="bd-navbar navbar navbar-expand-md navbar-light bg-primary">
+    <div class="row align-items-center w-100">
+      <div class="col text-left">
+        <%= link_to "はぐくむコーチ MATCH", root_path, class: "text-white" %>
+      </div>
+      <div class="col-3 text-right">
+        <button style="width: 56px;" class="col navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <ul class="navbar-nav d-md-flex collapse col-md-6 justify-content-end pl-3" id="navbarToggleExternalContent">
+      <% if coach_signed_in? %>
         <li class="nav-item mr-2"><%= link_to "プロフィール編集", edit_coach_registration_path, class: "text-white" %></li>
         <li class="nav-item"><%= link_to "ログアウト", logout_path, class: "text-white" %></li>
-      </ul>
-      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <% else %>
-      <ul class="navbar-nav flex-row ml-md-auto d-md-flex collapse" id="navbarToggleExternalContent">
+      <% else %>
         <li class="nav-item mr-2"><%= link_to "コーチ登録", new_coach_registration_path, class: "text-white" %></li>
         <li class="nav-item mr-2"><%= link_to "サインイン", login_path, class: "text-white" %></li>
-      </ul>
-      <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <% end %>
+      <% end %>
+    </ul>
 
   </header>
     <%= yield %>

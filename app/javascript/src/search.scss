@@ -1,0 +1,82 @@
+.bd-sidebar {
+  order: 0;
+  // background-color: #f5f2f9;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+  @include media-breakpoint-up(md) {
+    @supports (position: sticky) {
+      position: sticky;
+      top: 4rem;
+      z-index: 1000;
+      height: calc(100vh - 4rem);
+    }
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
+
+  @include media-breakpoint-up(xl) {
+    flex: 0 1 320px;
+  }
+}
+
+.bd-content {
+  order: 1;
+
+  // Hack the sticky header
+  > h2[id],
+  > h3[id],
+  > h4[id] {
+    pointer-events: none;
+
+    &::before {
+      display: block;
+      height: 6rem;
+      margin-top: -6rem;
+      content: "";
+    }
+  }
+
+  > table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      overflow-x: auto;
+
+      &.table-bordered {
+        border: 0;
+      }
+    }
+
+    // Cells
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          padding: $table-cell-padding;
+          vertical-align: top;
+          border: 1px solid $table-border-color;
+
+          > p:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    // Prevent breaking of code (e.g., Grunt tasks list)
+    td:first-child > code {
+      white-space: nowrap;
+    }
+  }
+}
+
+.bd-title {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  @include font-size(3rem);
+}
