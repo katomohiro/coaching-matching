@@ -3,7 +3,6 @@
 class Coaches::CoachesController < ApplicationController
 
   def search
-    # @coaches = Coaches::SearchService.new(params).call
     @coach = Coach.new(get_params)
     @coaches = Coach.
         where_like_name(@coach.name).

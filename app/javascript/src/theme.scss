@@ -1,0 +1,15 @@
+/* 1.変数の内容を変更 */
+/* テーマカラーを変更する */
+$theme-colors: (
+        primary: #003d8a,
+        secondary: #003d8a,
+        main: #222 /* デフォルトにないカラーの追加 */
+);
+/* ブレークポイントを変更する */
+//$grid-breakpoints: (
+//        lg: 1024px,
+//        xl: 1366px
+//);
+
+/* font-familyを上書き */
+//$font-family-sans-serif:  Hiragino Kaku Gothic ProN,Meiryo,メイリオ, Arial, sans-serif;

@@ -1,31 +1,51 @@
 <div class="container">
-  <main class="row pt-3 pb-5" role="main">
-    <div class="col-3">
-      <%= image_tag @coach.thumbnail.url, class: "w-100" if @coach.thumbnail? %>
+  <main class="row justify-content-center pt-3 pb-5" role="main">
+    <div class="col-md-9">
+    <div class="card w-100 mr-md-3 ml-md-3">
+
+      <div class="card-header bg-white border-primary" style="border-bottom: 3px solid">
+        <div>
+          <div><h3 class="mb-0">コーチについて</h3></div>
+        </div>
+      </div>
+
+      <div class="card-header border-bottom-0">
+        <div>
+          <div><h5 class="mb-0">基本情報</h5></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="d-inline-block mr-3 align-middle" style="width:75px;height:75px;">
+            <%= image_tag @coach.thumbnail.thumb.url, class: "w-100 h-100 rounded-circle", style: "object-fit:cover;" if @coach.thumbnail? %>
+          </div>
+          <div class="d-inline-block align-middle">
+            <h5 class="card-title"><%= @coach.name %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= @coach.nickname %></h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-header border-bottom-0">
+        <div>
+          <div><h5 class="mb-0">紹介文</h5></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <%= @coach.description %>
+      </div>
+
+      <div class="card-header border-bottom-0">
+        <div>
+          <div><h5 class="mb-0">申込方法</h5></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <%= @coach.contact %><br><br>
+        ※ 利用状況把握のため、<%= link_to "申込フォーム", "https://forms.gle/aEKQ54dKiCTjVqDz7" %>記入をお願いします。
+      </div>
+      
     </div>
-    <div class="col-9">
-      <table>
-        <tr>
-          <td class="w-25">名前</td>
-          <td><%= @coach.name %></td>
-        </tr>
-
-        <tr>
-          <td class="w-25">ニックネーム</td>
-          <td><%= @coach.nickname %></td>
-        </tr>
-
-        <tr>
-          <td class="w-25">紹介文</td>
-          <td><%= @coach.description %></td>
-        </tr>
-
-        <tr>
-          <td class="w-25">連絡方法</td>
-          <td><%= @coach.contact %></td>
-        </tr>
-
-      </table>
     </div>
   </main>
 </div>
